@@ -1,0 +1,20 @@
+<script>
+  async function loadBankHolidays(division = "england-and-wales") 
+  {
+
+    const res = await fetch("https://www.gov.uk/bank-holidays.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+    const data = await res.json();
+    const events = data[division]?.events ?? [];
+
+    const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+    const upcoming = events.filter(e => e.date >= today).slice(0, 5);
+
+    const ul = document.querySelector("#bank-holidays");
+    ul.innerHTML = upcoming.map(e =>`<li><strong>${e.title}</strong> — ${e.date}${e.notes ? ` (${e.notes})` : ""}</li>`).join("");
+  }
+
+  loadBankHolidays();
+</script>
+<ul id="bank-holidays"></ul>

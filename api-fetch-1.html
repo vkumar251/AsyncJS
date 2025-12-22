@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible", content="IE-edge">
+        <title>API Fetch | AsyncJS</title>
+        <link rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <style>
+            body {font-family: Arial;}
+            section {border: 2px dashed black; margin: 2rem;}
+            div {border: 2px solid black; width: 60%; margin: 2rem auto; padding: 2rem; text-align: center;}
+            h1 {font-size: 40px;}
+            h2 {font-size: 25px; padding: 1rem;}
+            p {font-size: 20px;}
+            button {padding: 0.5rem 2rem; margin: 1rem; border: 2px solid black; cursor: pointer;}
+            label {padding: 0.5rem; margin: 1rem;}
+            input {padding: 0.5rem; margin: 1rem; border: 2px solid black;}
+            #error-msg {color: red; font-weight: 600; display: none;}
+        </style>
+    </head>
+    <body>
+        <header>
+        </header>
+        <main>
+            <input type="text" id="pokemon-name" placeholder="Enter Pokemon Name">
+            <button id="fetch-button">Fetch Pokemon</button>
+            <img id="pokemon-sprite" alt="Pokemon Sprite" src="">
+            <p id="error-msg">Error: Pokemon not found</p>
+            <p id="data"></p>
+        </main>
+        <footer>
+        </footer>
+        <script src="js/pokeapi.js"></script>
+    </body>
+</html>
